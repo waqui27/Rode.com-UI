@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RØDE-clone</title>
+    <link rel="icon" href="https://cdn.rode.com/website/rode-favicon.svg"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+    tailwind.config = {
+      theme: {
+        screens : {
+            sm: '480px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1200px'
+        },
+        extend: {
+          colors: {
+            mygray: 'rgba(0,0,0,.5)',
+            mylightgray: '#00000028',
+            mybgcolor: '#F5F7FA',
+            myyellow: '#ad9970'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+    <!-- Header & navbar -->
+    <!-- Top Bar Section -->
+    <section class="hidden bg-white xl:flex justify-between items-center px-[68px] py-[5px] mx-2 border-b-[0.5px] border-mylightgray">
+        <div class="flex gap-1 justify-center items-start">
+            <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.49992 0.557373C3.20963 0.557373 0.537109 3.22533 0.537109 6.49236C0.537109 11.0063 6.49992 17.4359 6.49992 17.4359C6.49992 17.4359 12.4627 11.0063 12.4627 6.49236C12.4627 3.22533 9.79021 0.557373 6.49992 0.557373Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6.50048 9.7315C8.28058 9.7315 9.72362 8.23449 9.72362 6.38784C9.72362 4.54119 8.28058 3.04419 6.50048 3.04419C4.72039 3.04419 3.27734 4.54119 3.27734 6.38784C3.27734 8.23449 4.72039 9.7315 6.50048 9.7315Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span class="text-xs text-mygrey">EN</span>
+            <img class="w-2 mt-1 ml-1" src="assets/down-arrow-solid-24 (1).png" alt="">
+        </div>
+        <div>
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.4023 5.21899C12.4023 2.88051 10.4828 1 8.07994 1C5.67702 1 3.76465 2.88051 3.76465 5.21899C3.76465 7.52973 5.68413 9.41023 8.08704 9.41023C10.49 9.41023 12.4023 7.52973 12.4023 5.21899Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M1.14071 16.488C0.643067 17.6746 1.52461 19 2.85403 19H13.3117C14.6411 19 15.5226 17.6746 15.025 16.488C13.724 13.4626 11.1007 11.4155 8.0793 11.4155C5.04367 11.4155 2.41326 13.4626 1.14071 16.488Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+    </section>
+
+    <!-- Menu Bar Section -->
+    <section class="z-10 sticky top-0 flex justify-between items-center bg-white px-[12px] py-[9px] border-b-[0.5px] border-mylightgray xl:pl-[76px] xl:pr-[92px] xl:pt-[27px] xl:pb-[19px]">
+      <div class="xl:hidden flex justify-between items-center gap-[16px] md:gap-[20px]">
+        <a href="#">
+          <svg class="w-[20px] lg:w-6 stroke-2 stroke-mygray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </a>
+        <div class="flex gap-1 justify-center items-center">
+          <svg class="w-[10px] lg:w-6"  width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.49992 0.557373C3.20963 0.557373 0.537109 3.22533 0.537109 6.49236C0.537109 11.0063 6.49992 17.4359 6.49992 17.4359C6.49992 17.4359 12.4627 11.0063 12.4627 6.49236C12.4627 3.22533 9.79021 0.557373 6.49992 0.557373Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6.50048 9.7315C8.28058 9.7315 9.72362 8.23449 9.72362 6.38784C9.72362 4.54119 8.28058 3.04419 6.50048 3.04419C4.72039 3.04419 3.27734 4.54119 3.27734 6.38784C3.27734 8.23449 4.72039 9.7315 6.50048 9.7315Z" stroke="#484848" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span class="text-base lg:text-[20px]">EN</span>
+          <img class="w-2 lg:w-[12px] mt-1 ml-1" src="assets/down-arrow-solid-24 (1).png" alt="">
+        </div>
+      </div>
+      <div>
+        <a href="#"><img class="h-6 mr-[74px] xl:mr-0" src="assets/logo.svg" alt="" class="w-28 md:w-40"></a>
+      </div>
+      <nav class="hidden xl:block">
+        <ul class="flex gap-2 text-[15px] ml-[-100px] leading-4 tracking-wide">
+          <li class="py-2 px-6"><a href="#">PRODUCTS</a></li>
+          <li class="py-2 px-6"><a href="#">USER GUIDES</a></li>
+          <li class="py-2 px-6"><a href="#">SOLUTIONS</a></li>
+          <li class="py-2 px-6"><a href="#">APPAREL</a></li>
+          <li class="py-2 px-6"><a href="#">SUPPORT</a></li>
+        </ul>
+      </nav>
+      <div>
+        <img class="w-[14px] mr-2 lg:w-6" src="assets/search.svg" alt="">
+      </div>
+    </section>
+   <!-- Header End -->
+
+    <!-- Body Section -->
+    <!-- ↓↓↓ Section-1 RODECASTER PRO II ↓↓↓ -->
+    <section class="flex flex-col  bg-black lg:bg-[url('assets/rode-rodecaster-pro-II-home-page-1920x700-rgb.jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-rodecaster-pro-II-home-page-800x700-rgb.jpg" alt="">
+      </div>
+
+      <div class="bg-black lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-[460px] xl:ml-[630px] lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="w-[350px] md:w-[540px] mb-8" src="assets/RODECasterProII_PL_PI_01.svg" alt="">
+        <h4 class="text-white mb-2 text-xl md:text-2xl">The Revolution Is Here</h4>
+        <p class="text-[#ffffff80] text-center text-14px md:text-[17px] md:w-[510px] mb-10 lg:mb-12 px-2">The RØDECaster Pro II is the world's most powerful all-in-one audio solution for streamers, podcasters, musicians, and creators. Take your content to the next level.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-2  NTH-100 ↓↓↓ -->
+    <section class="flex flex-col lg:bg-[url('assets/rode-nth100-lifestyle-insitu-female-looking-down-grey-1920x700-rgb.jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-nth100-lifestyle-insitu-female-looking-down-grey-800x700-rgb.jpg" alt="">
+      </div>
+
+      <div class="lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-24 lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="w-[350px] md:w-[540px] mb-8" src="assets/NTH-100_PL_P_RGB_01.svg" alt="">
+        <h4 class="text-xl md:text-2xl mb-2 text-center">Your Search For The Perfect Headphones Is Over</h4>
+        <p class="text-mygray text-center text-14px md:text-[17px] md:w-[500px] mb-6 lg:mb-12 px-2">Experience sound like never before with the NTH-100s. Exceptional sonic performance, superior comfort and iconic looks that inspires creativity.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-3 NT-USB ↓↓↓ -->
+    <section class="flex flex-col lg:bg-[url('assets/rode-nt-usb-webheader-v7-1920x700-rgb.jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-nt-usb-webheader-v7-800x700-rgb.jpg" alt="">
+      </div>
+
+      <div class="lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-[460px] xl:ml-[630px] lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="w-[350px] md:w-[540px] mb-8" src="assets/NT-USB_PL_P_01.svg" alt="">
+        <h4 class="mb-2 text-xl md:text-2xl">Studio-Quality Recording, Made Simple</h4>
+        <p class="text-mygray text-center text-14px md:text-[17px] md:w-[500px] mb-6 lg:mb-12 px-2">The NT-USB is a studio-quality USB condenser microphone that offers impeccable audio, elegant looks and premium features, all in an easy-to-use form factor, the NT-USB will have you sounding like a pro in seconds.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-4  PODMIC ↓↓↓ -->
+    <section class="flex flex-col lg:bg-[url('assets/rode-podmic-webheader-1920x700-rgb-(2).jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-podmic-webheader-800x700-rgb-(2).jpg" alt="">
+      </div>
+
+      <div class="lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-24 lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="lg:hidden w-[350px] md:w-[540px] mb-8" src="assets/PodMic_PL_P_01_web-top-padding-01.svg" alt="">
+        <img class="hidden lg:block w-[540px] mb-8" src="assets/PodMic_PL_PI_01.svg" alt="">
+        <!-- <img class="w-[350px] md:w-[540px] mb-8" src="assets/rode-podmic-webheader-800x700-rgb-(2).svg" alt=""> -->
+        <h4 class="lg:text-white text-xl md:text-2xl mb-2 text-center">Broadcast-grade Dynamic Microphone</h4>
+        <p class="text-mygray lg:text-[#ffffff80] text-center text-14px md:text-[17px] md:w-[500px] mb-6 lg:mb-12 px-2">Give your voice that rich, broadcast sound with the PodMic. Perfect for livestreaming, voice-over, podcasting and gameplay.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-5 WIRELESS GO II ↓↓↓ -->
+    <section class="flex flex-col lg:bg-[url('assets/WIGOII-WEBHEADER-02.jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-wigo2-web-header-800x700.jpg" alt="">
+      </div>
+
+      <div class="lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-[460px] xl:ml-[630px] lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="lg:hidden w-[350px] md:w-[540px] mb-8" src="assets/WIGO_II_PL_P_01_web-top-padding-01.svg" alt="">
+        <img class="hidden lg:block w-[540px] mb-8" src="assets/WIGO_II_PL_PI_01.svg" alt="">
+        <h4 class="lg:text-white text-xl md:text-2xl mb-2">Next Generation Wireless Audio</h4>
+        <p class="text-mygray lg:text-[#ffffff80] text-center text-14px md:text-[17px] md:w-[500px] mb-6 lg:mb-12 px-2">The Wireless GO II is the world’s most powerful and versatile wireless microphone. With an unparalleled feature set and ultra-compact form factor, this is next generation wireless audio for every creator.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-6  NT-USB MINI ↓↓↓ -->
+    <section class="flex flex-col lg:bg-[url('assets/rode-nt-usb-mini-webheader-1920x700-rgb-(2).jpg')] w-full lg:h-[700px] bg-no-repeat bg-center">
+      <div class="self-center">
+        <img class="mb-4 lg:hidden" src="assets/rode-nt-usb-mini-webheader-800x700-rgb.jpg" alt="">
+      </div>
+
+      <div class="lg:bg-transparent flex flex-col justify-center items-center lg:px-[15px] lg:ml-24 lg:h-[700px] lg:w-[540px] pb-4">
+        <img class="lg:hidden w-[350px] md:w-[540px] mb-8" src="assets/NT-USB_Mini_PL_P_01_web-top-padding-01.svg" alt="">
+        <img class="hidden lg:block w-[540px] mb-8" src="assets/NT-USB_Mini_PL_PI_01.svg" alt="">
+        <!-- <img class="w-[350px] md:w-[540px] mb-8" src="assets/rode-podmic-webheader-800x700-rgb-(2).svg" alt=""> -->
+        <h4 class="lg:text-white text-xl md:text-2xl mb-2 text-center">Compact Sound, Incredibly Powerful</h4>
+        <p class="text-mygray lg:text-[#ffffff80] text-center text-14px md:text-[17px] md:w-[500px] mb-6 lg:mb-12 px-2">The NT-USB Mini brings pristine studio sound to a compact USB microphone, and with RØDE Connect unlocking more power, more features and more control, it’s the perfect recording solution for podcasters, gamers and streamers.</p>
+        <div class="flex gap-2 justify-between items-center">
+          <h2 class="md:text-[17px] font-semibold text-myyellow">
+            <a class="group" href="#">
+              LEARN MORE 
+              <svg class="stroke-myyellow w-[20px] mb-1 stroke-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </h2>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[22px] py-[6px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out">BUY NOW</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-7  Explore The RØDE Range  ↓↓↓ -->
+    <section class="flex flex-col items-center justify-center gap-4 md:gap-8 mx-4 md:mx-8 my-4 md:my-8">
+      <h1 class="text-mygray text-2xl md:text-4xl font-bold">Explore The RØDE Range</h1>
+
+      <div class="max-w-[1110px] bg-myyellow relative hover:grayscale transition">
+        <img class="" src="assets/images_page_1_modules_5357_microphones-module-1200x300-rgb.png" alt="">
+        <a class="" href="#">
+          <div class="w-full h-full flex items-center justify-center absolute top-0 pointer"><img src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5364%2Fmicrophones-text.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="max-w-[1110px] bg-myyellow relative hover:grayscale transition">
+        <img class="" src="assets/images_page_1_modules_5359_interfaces-module-2022-1200x300-rgb.jpg" alt="">
+        <a class="" href="#">
+          <div class="w-full h-full flex items-center justify-center absolute top-0 pointer"><img src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5366%2Finterfaces-text.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="max-w-[1110px] bg-myyellow relative hover:grayscale transition">
+        <img class="" src="assets/images_page_1_modules_5361_software-module-2021-1200x300-rgb.png" alt="">
+        <a class="" href="#">
+          <div class="w-full h-full flex items-center justify-center absolute top-0 pointer"><img src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5365%2Fsoftware-text.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="max-w-[1110px] bg-myyellow relative hover:grayscale transitionf">
+        <img class="" src="assets/images_page_1_modules_5370_accessories-module-2021-1200x300-rgb.png" alt="">
+        <a class="" href="#">
+          <div class="w-full h-full flex items-center justify-center absolute top-0 pointer"><img src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5368%2Faccessories-text.svg" alt="">
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ↓↓↓ Section-8  RØDE BLOG  ↓↓↓ -->
+    <section class="bg-mybgcolor flex flex-col items-center">
+      <div class="flex justify-center bg-white w-full pt-4 pb-8">
+        <a class="text-2xl md:text-3xl font-semibold text-myyellow" href="#">Latest From The RØDE Blog</a>
+      </div>
+
+      <div class="flex flex-col gap-4 mx-4 mt-8 md:mt-12 mb-12 md:mb-16 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-4 justify-center items-center">
+        <div class="bg-white border max-w-[538px] md:min-h-[750px] flex flex-col items-center">
+          <div class="flex justify-center items-center min-h-[125px] text-center text-2xl md:text-[21px] xl:text-3xl font-semibold p-2"><h1>XLR vs USB Microphones: Which is Best for You?</h1></div>
+          <img src="assets/thumbnail2.jpg" alt="">
+          <p class="text-center m-4 p-4 text-[17px]">We explore the differences between XLR and USB microphones, the advantages of each and which type is best suited to your needs.</p>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[20px] py-[4px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out my-8">LEARN MORE</button>
+        </div>
+
+        <div class="bg-white border max-w-[538px] md:min-h-[750px] flex flex-col items-center">
+          <div class="flex justify-center items-center min-h-[125px] text-center text-2xl md:text-[21px] xl:text-3xl font-semibold p-2"><h1>The Difference Between Large-Diaphragm and Small-Diaphragm Condenser Microphones</h1></div>
+          <img src="assets/thumbnail6.jpeg" alt="">
+          <p class="text-center m-4 p-4 text-[17px]">We explore the difference between large- and small-diaphragm condenser microphones, and what each is best used for.</p>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[20px] py-[4px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out my-8">LEARN MORE</button>
+        </div>
+        
+        <div class="bg-white border max-w-[538px] md:min-h-[750px] flex flex-col items-center">
+          <div class="flex justify-center items-center min-h-[125px] text-center text-2xl md:text-[21px] xl:text-3xl font-semibold p-2"><h1>What is a Condenser Microphone and When to Use One</h1></div>
+          <img src="assets/thumbnail.jpg" alt="">
+          <p class="text-center m-4 p-4 text-[17px]">Learn more about the different types of condenser mics, how they work and the best applications for using them.</p>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[20px] py-[4px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out my-8">LEARN MORE</button>
+        </div>
+
+        <div class="bg-white border max-w-[538px] md:min-h-[750px] flex flex-col items-center">
+          <div class="flex justify-center items-center min-h-[125px] text-center text-2xl md:text-[21px] xl:text-3xl font-semibold p-2"><h1>Firmware Version 1.0.7 for the RØDECaster Pro II is Available Now</h1></div>
+          <img src="assets/rode-rodecaster-pro-II-on-black-front-580x509.jpg" alt="">
+          <p class="text-center m-4 p-4 text-[17px]" class="px-4">Firmware version 1.0.7 includes key feature additions, such as custom routing for USB and Bluetooth outputs..</p>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[20px] py-[4px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out my-8">LEARN MORE</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- ↓↓↓ Footer Section  ↓↓↓ -->
+    <footer class="pt-4 md:pt-24">
+
+      <!-- ↓↓↓ Footer-TOP section  ↓↓↓ -->
+      <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start pt-12 lg:pb-8 md:px-[88px] border-t-[0.5px] border-mylightgray">
+        <div>
+          <img class="lg:mt-2" src="assets/RODE_logo_142x85_desktop_light_mode.svg" alt="">
+        </div>
+
+        <!-- ↓↓↓ MOBILE-Footer-MENU  ↓↓↓ -->
+        <div class="w-full md:hidden my-12">
+          <div class="flex justify-between items-center mx-4 px-[12px] py-[12px] border-y border-[#b7b7b7]">
+            <span class="text-lg text-[#484848] font-semibold">Products</span>
+            <div>
+              <svg class="w-8 stroke-[#484848]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>              
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mx-4 px-[12px] py-[12px] border-b border-[#b7b7b7]">
+            <span class="text-lg text-[#484848] font-semibold">Support</span>
+            <div>
+              <svg class="w-8 stroke-[#484848]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>              
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mx-4 px-[12px] py-[12px] border-b border-[#b7b7b7]">
+            <span class="text-lg text-[#484848] font-semibold">Company</span>
+            <div>
+              <svg class="w-8 stroke-[#484848]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>              
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mx-4 px-[12px] py-[12px] border-b border-[#b7b7b7]">
+            <span class="text-lg text-[#484848] font-semibold">Account</span>
+            <div>
+              <svg class="w-8 stroke-[#484848]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>              
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-fit hidden mb-8 mt-4 lg:mb-0 lg:mt-0 md:flex justify-between">
+          <ul class="flex flex-col gap-2 mr-4 pl-2 text-[17px] text-[#484848]">
+            <li class="text-black font-semibold">Products</li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Microphones</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Headphones</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Interfaces and Mixers</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Accessories</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Software</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Apparel</a></li>
+          </ul>
+
+          <ul class="flex flex-col gap-2 mr-20 text-[17px] text-[#484848]">
+            <li class="text-black font-semibold">Support</li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Contact RØDE</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Service Center</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Warranty</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Where to Buy</a></li>
+          </ul>
+
+          <ul class="flex flex-col gap-2 text-[17px] text-[#484848]">
+            <li class="text-black font-semibold">Company</li>
+            <li><a class="hover:text-mygray transition duration-300" href="">About RØDE</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">News and Info</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Job Opportunities</a></li>
+            <li class="text-black font-semibold">Account</li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Manage your Account</a></li>
+            <li><a class="hover:text-mygray transition duration-300" href="">Create Account</a></li>
+          </ul>
+        </div>
+          
+        <div class="flex flex-col items-center lg:items-end">
+          <h1 class="text-center lg:text-right text-2xl xl:text-[27px] font-semibold">Subscribe to our latest <br> news and offers</h1>
+          <button class="bg-myyellow border border-myyellow rounded-3xl px-[20px] pt-[3px] pb-[5px] text-white font-semibold md:text-[17px] hover:text-myyellow hover:bg-white transition duration-300 ease-in-out my-4">Sign Up</button>
+        </div>
+      </div>
+
+      <!-- ↓↓↓ Footer-BOTTOM section  ↓↓↓ -->
+      <div class="flex flex-col lg:flex-row gap-4 justify-between items-center mx-4 md:mx-[70px] border-t-[0.5px] border-mylightgray py-8 lg:pb-16">
+        <div class="order-3 lg:order-1"><span class="text-[15px] text-[#484848]">© 2022 RØDE All Rights Reserved.</span></div>
+        <div class="order-1 lg:order-2"><span class="text-[13px] text-[#484848] lg:ml-20">Privacy Policy <span class="text-xl text-[#484848]">&nbsp; &nbsp;|&nbsp; &nbsp;</span> Terms & Conditions
+          </span></div>
+        <div class="flex gap-8 md:gap-16 lg:gap-8 order-2 lg:order-3">
+          <img class="w-[26px] cursor-pointer" src="assets/facebook-brands.svg" alt="">
+          <img class="w-[26px] cursor-pointer" src="assets/twitter-brands.svg" alt="">
+          <img class="w-[26px] cursor-pointer" src="assets/instagram-brands.svg" alt="">
+          <img class="w-[26px] cursor-pointer" src="assets/youtube-brands.svg" alt="">
+          <img class="w-[26px] cursor-pointer" src="assets/tiktok-brands.svg" alt="">
+        </div>
+      </div>
+    </footer>
+ 
+</body>
+</html>
+
