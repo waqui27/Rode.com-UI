@@ -1,6 +1,6 @@
-# Paytm Home-Page Clone Using TailwindCSS
+# Rode.com Home-Page Clone Using TailwindCSS
 
-> ### **Deployed Website** :-[Live Link](https://ui-clone-paytm.netlify.app/?target=_blank)
+> ### **Deployed Website** :-[Live Link](https://ui-clone-rode.netlify.app/){:target="_blank"}
 <br>
 
 ![HTML](https://img.shields.io/badge/HTML5-oNLY-E34F26?style=for-the-badge&logo=HTML5)
@@ -17,7 +17,7 @@
 
   <br>
 
-![Project-Image]()
+![Project-Image](ui-clone-rode.png)
 
 <br>
 
