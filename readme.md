@@ -1,6 +1,6 @@
 # Rode.com Home-Page Clone Using TailwindCSS
 
-> ### **Deployed Website** :-[Live Link](https://ui-clone-rode.netlify.app/){:target="_blank"}
+> ### **Deployed Website** :-[Live Link](https://ui-clone-rode.netlify.app/)
 <br>
 
 ![HTML](https://img.shields.io/badge/HTML5-oNLY-E34F26?style=for-the-badge&logo=HTML5)
